@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+        <form method="post" action = ''>
+            {% csrf_token %}
+            <input type="search"  name = 'city' placeholder = 'please search a city'>
+            <input type="submit">
+        <form>
+
+
+    {% if data.country_code %}
+    <h1>{{ city }}</h1>
+    <p>Country Code : {{data.country_code}}</p>
+    <p>Coordinate : {{data.coordinate}}</p>
+    <p>Temperature : {{data.temp}}</p>
+    <p>Pressure : {{data.pressure}}</p>
+    {% elif context %}
+    <h1>{{context}}</h1>
+    {% endif %}
+    
+    
+</body>
+</html>
+
+
